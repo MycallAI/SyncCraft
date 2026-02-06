@@ -1,50 +1,59 @@
-# PsiACE/Skills
+---
+name: sync-craft
+description: A comprehensive toolkit for [Insert specific SyncCraft function, e.g., synchronizing AI model states].
+version: 1.0.0
+dependencies:
+  - python>=3.10
+  - [dependency_2]
+---
 
-A small, shared skill library by builders, for builders.
+# SyncCraft
 
-[This repo](https://github.com/psiace/skills) includes skills from me and my friends. The content comes from our own practice and selected public sources. Give them a try, read along, and enjoy the craft of building.
+## Overview
+SyncCraft is designed to [briefly describe the core problem SyncCraft solves]. It provides a structured workflow for [describe the outcome], ensuring consistency and reliability in your AI pipeline.
 
-Online docs: https://skills.psiace.me/
+## When to Use This Tool
+Use SyncCraft when you need to:
+* **Synchronize**: [Specific use case 1]
+* **Deploy**: [Specific use case 2]
+* **Analyze**: [Specific use case 3]
 
-## Installation
+---
 
-```bash
-pnpx skills add PsiACE/skills --skill='*'
-```
+## Workflow
+Follow these steps to utilize SyncCraft effectively. Skip steps only if the specific configuration is already established.
 
-Or install globally:
+### Step 1: Initialize the Environment
+Before running the synchronization logic, ensure the environment is correctly scaffolded.
 
-```bash
-pnpx skills add PsiACE/skills --skill='*' -g
-```
+* **Action**: Run the initialization script to generate the required config files.
+    ```bash
+    python scripts/init_sync.py --project-name "my-new-project"
+    ```
+* **Check**: Verify that the `assets/` directory has been populated with your specific templates.
 
-## Skills
+### Step 2: Configure Reference Patterns
+SyncCraft relies on defined patterns to execute tasks.
 
-| Skill | Description |
-| --- | --- |
-| [friendly-python](skills/friendly-python/SKILL.md) | Practical guidance for writing, refactoring, and reviewing friendly Python code |
-| [piglet](skills/piglet/SKILL.md) | Practical Python craftsmanship guidance based on One Python Craftsman |
-| [fast-rust](skills/fast-rust/SKILL.md) | Practical guidance for writing, refactoring, and reviewing fast, reliable, and maintainable Rust code |
+* **Action**: Edit the `references/workflow-patterns.md` to match your specific constraints.
+* **Tip**: See [references/architecture.md](references/architecture.md) for detailed schema definitions.
 
-## Documentation
+### Step 3: Execute Core Logic
+Run the main synchronization process.
 
-Install doc dependencies with uv and preview locally:
+* **Action**: Execute the core script.
+    ```bash
+    python scripts/core_logic.py --mode strict
+    ```
 
-```bash
-uv sync --group docs
-uv run mkdocs serve -f mkdocs.yml
-```
+### Step 4: Validate Output
+Ensure the output matches the expected schema.
 
-Build the static site:
+* **Success Criteria**:
+    * [Criteria 1, e.g., All nodes are in sync]
+    * [Criteria 2, e.g., Latency is under 20ms]
 
-```bash
-uv run mkdocs build -f mkdocs.yml
-```
+---
 
-## Notes
-
-- This collection is small by design and may change as we learn.
-
-## Acknowledgements
-
-See [skills/ACKNOWLEDGEMENTS.md](skills/ACKNOWLEDGEMENTS.md).
+## Troubleshooting
+If you encounter [Specific Error], refer to `references/architecture.md` to ensure your data models match the required input format.
