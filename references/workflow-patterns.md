@@ -27,3 +27,38 @@ destination:
 # Safety: Prevents wiping the destination if source is empty
 guardrails:
   fail_if_source_empty: true
+
+pattern: aggregator
+strategy: merge_by_timestamp
+
+upstreams:
+  - id: agent_alpha
+    path: ./data/agents/alpha/logs.json
+  - id: agent_beta
+    path: ./data/agents/beta/logs.json
+
+downstream:
+  path: ./data/global_context.json
+
+# Conflict Resolution: How to handle colliding keys
+resolution:
+  on_conflict: prefer_latest
+  ignore_nulls: true
+
+pattern: governor
+strategy: diff_and_wait
+
+source:
+  type: git_branch
+  branch: develop
+
+destination:
+  type: git_branch
+  branch: main
+
+# Approval Logic
+gate:
+  require_manual_approval: true
+  diff_threshold: 15% # Auto-reject if changes exceed 15% of file volume
+  notify:
+    slack_webhook: ${SLACK_WEBHOOK_URL}
