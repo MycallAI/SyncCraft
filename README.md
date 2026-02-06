@@ -55,5 +55,18 @@ Ensure the output matches the expected schema.
 
 ---
 
+## Layout
+SyncCraft/
+├── README.md                # Adapted from SKILL.md (The main entry point)
+├── assets/                  # Templates and static resources
+│   └── templates/           # e.g., default configuration templates
+├── references/              # Documentation and knowledge context
+│   ├── architecture.md      # Technical details (like 'references/output-patterns.md')
+│   └── workflow-patterns.md # Common usage patterns
+├── scripts/                 # Executable logic (Python/Bash)
+│   ├── init_sync.py         # Setup script (like 'init_skill.py')
+│   └── core_logic.py
+└── .gitignore
+
 ## Troubleshooting
 If you encounter [Specific Error], refer to `references/architecture.md` to ensure your data models match the required input format.
