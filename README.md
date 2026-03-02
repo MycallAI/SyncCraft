@@ -1,72 +1,94 @@
 ---
 name: sync-craft
-description: A comprehensive toolkit for [Insert specific SyncCraft function, e.g., synchronizing AI model states].
+description: A shared brain for builders. Practical guidance on writing, refactoring, and reviewing code that actually scales.
 version: 1.0.0
 dependencies:
   - python>=3.10
-  - [dependency_2]
 ---
 
 # SyncCraft
 
+A shared brain for builders. Practical guidance on writing, refactoring, and reviewing code that actually scales.
+
 ## Overview
-SyncCraft is designed to [briefly describe the core problem SyncCraft solves]. It provides a structured workflow for [describe the outcome], ensuring consistency and reliability in your AI pipeline.
 
-## When to Use This Tool
-Use SyncCraft when you need to:
-* **Synchronize**: [Specific use case 1]
-* **Deploy**: [Specific use case 2]
-* **Analyze**: [Specific use case 3]
+SyncCraft is a curated collection of engineering best practices designed to help developers write better, more maintainable code. It provides actionable guidance across Python and Rust, from fundamentals to advanced patterns.
 
----
+## Skills
 
-## Workflow
-Follow these steps to utilize SyncCraft effectively. Skip steps only if the specific configuration is already established.
+### Friendly Python
 
-### Step 1: Initialize the Environment
-Before running the synchronization logic, ensure the environment is correctly scaffolded.
+Practical guidance for writing, refactoring, and reviewing Python code with a Pythonic, readable, and maintainable style.
 
-* **Action**: Run the initialization script to generate the required config files.
-    ```bash
-    python scripts/init_sync.py --project-name "my-new-project"
-    ```
-* **Check**: Verify that the `assets/` directory has been populated with your specific templates.
+**Topics:**
+- Principles (correctness first, clarity next, performance last)
+- Error Handling
+- API Design
+- Extension Architecture
+- OOP Design
+- Reuse & Composition
+- Portability & Pythonic
+- CLI Argparse
+- Code Review Checklist
 
-### Step 2: Configure Reference Patterns
-SyncCraft relies on defined patterns to execute tasks.
+### Piglet
 
-* **Action**: Edit the `references/workflow-patterns.md` to match your specific constraints.
-* **Tip**: See [references/architecture.md](references/architecture.md) for detailed schema definitions.
+Python fundamentals for developers learning or brushing up on core concepts.
 
-### Step 3: Execute Core Logic
-Run the main synchronization process.
+**Topics:**
+- Variables and Naming
+- Branching and Conditions
+- Numbers, Strings, Containers
+- Functions and Returns
+- Exception Handling
+- Loops and Iteration
+- Decorators
+- Imports and Dependencies
+- Rules and File I/O
+- SOLID in Python
+- Edge Cases
+- Walrus Operator
 
-* **Action**: Execute the core script.
-    ```bash
-    python scripts/core_logic.py --mode strict
-    ```
+### Fast Rust
 
-### Step 4: Validate Output
-Ensure the output matches the expected schema.
+Guidance for writing optimized, idiomatic Rust code.
 
-* **Success Criteria**:
-    * [Criteria 1, e.g., All nodes are in sync]
-    * [Criteria 2, e.g., Latency is under 20ms]
+**Topics:**
+- Compilation Optimization
+- Error Design
+- Type Exercise
 
----
+## Usage
+
+OpenCode will automatically discover these skills. When working on Python or Rust code, the relevant guidance will be available.
+
+Browse the full documentation:
+
+```bash
+mkdocs serve
+```
+
+Then visit `http://localhost:8000`
 
 ## Layout
-SyncCraft/
-├── README.md                # Adapted from SKILL.md (The main entry point)
-├── assets/                  # Templates and static resources
-│   └── templates/           # e.g., default configuration templates
-├── references/              # Documentation and knowledge context
-│   ├── architecture.md      # Technical details (like 'references/output-patterns.md')
-│   └── workflow-patterns.md # Common usage patterns
-├── scripts/                 # Executable logic (Python/Bash)
-│   ├── init_sync.py         # Setup script (like 'init_skill.py')
-│   └── core_logic.py
-└── .gitignore
 
-## Troubleshooting
-If you encounter [Specific Error], refer to `references/architecture.md` to ensure your data models match the required input format.
+```
+SyncCraft/
+├── skills/                      # Skill definitions
+│   ├── friendly-python/         # Python best practices
+│   ├── piglet/                  # Python fundamentals
+│   └── fast-rust/               # Rust optimization
+├── references/                 # Shared reference docs
+├── overrides/                   # MkDocs theme overrides
+├── mkdocs.yml                   # Documentation config
+└── opencode.json                # OpenCode configuration
+```
+
+## Building Documentation
+
+```bash
+pip install mkdocs mkdocs-terminal pymdown-extensions
+mkdocs build
+```
+
+Output is in the `site/` directory.
